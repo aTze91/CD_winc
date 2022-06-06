@@ -15,6 +15,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - name: ssh
-        run: echo ${{ secrets.HOST }}
-        run: ssh -o StrictHostKeyChecking=no root@${{ secrets.HOST }} # >> /home/runneradmin/.ssh/known_hosts
+        - run: | 
+                 echo ${{ secrets.HOST }}
+                 ssh -o StrictHostKeyChecking=no root@${{ secrets.HOST }} # >> /home/runneradmin/.ssh/known_hosts
       - run: echo "🍏 This job's status is ${{ job.status }}."
