@@ -6,8 +6,5 @@ jobs:
   shh-log-in:
     runs-on: ubuntu-20.04
     steps:
-        - shell: bash
-          env:
-            HOST: ${{ secrets.HOST }}
-          run: 
+          run:
            ssh install
