@@ -15,5 +15,5 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - name: ssh
-        run: ls /home/runneradmin/.ssh
+        run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> /home/runneradmin/.ssh
       - run: echo "🍏 This job's status is ${{ job.status }}."
