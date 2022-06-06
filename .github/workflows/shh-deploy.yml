@@ -10,4 +10,4 @@ jobs:
           env:
             HOST: ${{ secrets.HOST }}
           run: 
-              ssh root@HOST
+              ssh root@$HOST
