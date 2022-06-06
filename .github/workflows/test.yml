@@ -14,5 +14,5 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-          ls /home/runner
+          cat ~/.ssh/known_hosts
       - run: echo "🍏 This job's status is ${{ job.status }}."
