@@ -17,5 +17,5 @@ jobs:
       - name: ssh
         run: | 
               echo ${{ secrets.HOST }}
-              ssh -o StrictHostKeyChecking=no root@${{ secrets.HOST }} # >> /home/runneradmin/.ssh/known_hosts
+            # ssh -o StrictHostKeyChecking=no root@${{ secrets.HOST }} # >> /home/runneradmin/.ssh/known_hosts
       - run: echo "🍏 This job's status is ${{ job.status }}."
