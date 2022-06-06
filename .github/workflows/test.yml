@@ -11,13 +11,12 @@ jobs:
         uses: actions/checkout@v3
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
+      - name: install ssh
         run: |
-          ls ${{ github.workspace }}
-          ls /home/runneradmin/
-          whoami
-      - name: Adding Known Hosts
-        run: sudo apt ssh
+          sudo apt-get update
+          sudo apt-get install ssh
+      #- name: Adding Known Hosts
+       # run: sudo apt ssh
         #run: sudo ssh-keyscan -H ${{ secrets.HOST }} >> /home/runneradmin/.ssh/known_hosts
       #- name: ssh
        # run: ssh -o StrictHostKeyChecking=no root@${{ secrets.HOST }}  >> /home/runneradmin/.ssh/known_hosts
