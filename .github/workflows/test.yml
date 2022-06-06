@@ -14,5 +14,6 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-          ssh-keyscan -H ${{secrets.HOST}}
+      - name: ssh
+        run: ssh-keyscan -H ${{secrets.HOST}} | echo
       - run: echo "🍏 This job's status is ${{ job.status }}."
