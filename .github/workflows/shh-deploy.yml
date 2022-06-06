@@ -10,4 +10,4 @@ jobs:
           env:
             HOST: ${{ secrets.HOST }}
           run: 
-           ls ~/.ssh | echo
+           ssh install
