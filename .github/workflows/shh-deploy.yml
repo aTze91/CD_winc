@@ -7,5 +7,3 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - run: ssh root@${{secrets.HOST}}
-    env :
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
