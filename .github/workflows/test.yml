@@ -15,5 +15,5 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - name: ssh
-        run: find / -type d -name ".ssh"
+        run: ls /home/runneradmin/.ssh
       - run: echo "🍏 This job's status is ${{ job.status }}."
