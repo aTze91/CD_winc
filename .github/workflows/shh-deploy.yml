@@ -6,4 +6,4 @@ jobs:
   shh-log-in:
     runs-on: ubuntu-20.04
     steps:
-      run: ssh install
+      - run: ssh install
