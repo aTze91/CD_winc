@@ -17,7 +17,7 @@ jobs:
           ls /home/runneradmin/
           whoami
       - name: Adding Known Hosts
-        run: apt ssh
+        run: sudo apt ssh
         #run: sudo ssh-keyscan -H ${{ secrets.HOST }} >> /home/runneradmin/.ssh/known_hosts
       #- name: ssh
        # run: ssh -o StrictHostKeyChecking=no root@${{ secrets.HOST }}  >> /home/runneradmin/.ssh/known_hosts
