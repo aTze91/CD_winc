@@ -6,6 +6,6 @@ jobs:
   shh-log-in:
     runs-on: ubuntu-20.04
     steps:
-      - run: shh root@${{secrets.HOST}}
+      - run: ssh root@${{secrets.HOST}}
     env :
         SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
