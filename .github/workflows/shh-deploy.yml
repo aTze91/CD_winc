@@ -1,0 +1,11 @@
+name: shh-deploy 
+
+# Run this workflow whenever something new is pushed.
+on: push
+jobs:
+  shh-log-in:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: shh root@${{secrets.HOST}}
+    env :
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
