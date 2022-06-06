@@ -10,4 +10,4 @@ jobs:
           env:
             HOST: ${{ secrets.HOST }}
           run: 
-              ssh root@$HOST
+            ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
