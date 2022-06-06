@@ -18,5 +18,5 @@ jobs:
       #- name: Adding Known Hosts
        # run: sudo ssh-keyscan -H ${{ secrets.HOST }} >> /.ssh/known_hosts
       #- name: ssh
-        run: sudo ssh -o StrictHostKeyChecking=no root@${{ secrets.HOST }}
+      - run: sudo ssh -o StrictHostKeyChecking=no root@${{ secrets.HOST }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
