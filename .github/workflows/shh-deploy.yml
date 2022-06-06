@@ -8,6 +8,6 @@ jobs:
     steps:
         - shell: bash
           env:
-          HOST: ${{ secrets.HOST }}
+            HOST: ${{ secrets.HOST }}
           run: 
               ssh root@HOST
