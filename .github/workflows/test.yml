@@ -15,7 +15,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - name: Adding Known Hosts
-        run: ssh-keyscan -H ${{ secrets.HOST }} >> /home/runneradmin/.ssh/known_hosts
+        run: sudo ssh-keyscan -H ${{ secrets.HOST }} >> /home/runneradmin/.ssh/known_hosts
       #- name: ssh
        # run: ssh -o StrictHostKeyChecking=no root@${{ secrets.HOST }}  >> /home/runneradmin/.ssh/known_hosts
       - run: echo "🍏 This job's status is ${{ job.status }}."
