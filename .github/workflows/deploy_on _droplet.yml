@@ -5,6 +5,5 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
      -name: setting-ssh-key
-      run: |
-            cd 
-            ls
+      run: cd 
+    - run: ls
