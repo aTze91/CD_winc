@@ -4,7 +4,7 @@ name: Run tests
 on: push
 jobs:
   run-tests:
-    runs-on: self-hosted
+    runs-on: ubuntu latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -17,8 +17,3 @@ jobs:
         run: pip install -r requirements.TXT
       - name: Run tests
         run: pytest
-      - name: deploy
-        run: |
-              cd
-              cd CD_winc
-              git pull
