@@ -1,0 +1,10 @@
+name: deploy_on_droplet
+on: push
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+     -name: setting ssh key
+      run: |
+            cd 
+            cd .ssh
