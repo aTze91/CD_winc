@@ -2,7 +2,7 @@ name: Deploy on droplet
 on: [push]
 jobs:
   deploy:
-    runs-on: winc_runner
+    runs-on: aTze91-CD_winc.winc_runner
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
