@@ -20,4 +20,5 @@ jobs:
       - name: deploy
         run: |
               cd
-              git clone https://github.com/aTze91/CD_winc.git
+              cd CD_winc
+              git pull
