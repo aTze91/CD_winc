@@ -6,7 +6,7 @@ jobs:
     steps:
      - name: setting-ssh-key
        run: |
-            whuami
+            whoami
             cd 
             ssh-keyscan
-            
+
