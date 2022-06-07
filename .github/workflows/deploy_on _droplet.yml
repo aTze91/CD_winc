@@ -4,6 +4,7 @@ jobs:
   deploy:
     runs-on: ubuntu-20.04
     steps:
-     -name: setting-ssh-key
-      run: cd 
-    - run: ls
+     - name: setting-ssh-key
+       run: |
+            cd 
+            ls
