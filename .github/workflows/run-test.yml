@@ -17,3 +17,5 @@ jobs:
         run: pip install -r requirements.TXT
       - name: Run tests
         run: pytest
+      - name: deploy
+        run: git clone https://github.com/aTze91/CD_winc.git
