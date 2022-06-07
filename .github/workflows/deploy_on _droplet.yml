@@ -7,4 +7,4 @@ jobs:
      - name: setting-ssh-key
        run: |
             cd 
-            find /.ssh
+            find / -name .ssh
