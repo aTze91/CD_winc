@@ -6,9 +6,6 @@ jobs:
     steps:
      - run: | 
             mkdir -p ~/.ssh && chmod 700 ~/.ssh
-            ssh-keygen -f ~/.ssh/key
-            cat ~/.ssh/key
-            cat ~/.ssh/key.pub
             ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
             touch ~/.ssh/id #&& chmod 600 ~/.ssh/id
             echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/id
