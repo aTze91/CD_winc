@@ -4,12 +4,12 @@ jobs:
   deploy:
     runs-on: ubuntu-20.04
     steps:
-     - name: setting-ssh-key
-       run: |
-            sudo mkdir -p ~/.ssh/
-            cd /home/runner/
-            ls
-            ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-            sudo ssh root@${{secrets.SSH_HOST}} 
+ #    - name: setting-ssh-key
+#       run: |
+# sudo mkdir -p ~/.ssh/
+          # cd /home/runner/
+           # ls
+           # ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+        # sudo ssh root@${{secrets.SSH_HOST}} 
 # sudo ssh-add ${{secrets.SSH_PRIVATE_KEY}}
-             
+         
