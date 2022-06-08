@@ -5,7 +5,8 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
      - name: setting-ssh-key
-       run: | 
+       run: |
+            sudo ssh-keygen -R HOSTNAME
             sudo ssh-keyscan ${{secrets.SSH_HOST}}
             sudo ssh ${{secrets.SSH_HOST}}
             sudo ssh root@${{secrets.SSH_HOST}} 
