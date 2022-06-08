@@ -8,7 +8,7 @@ jobs:
             mkdir -p ~/.ssh && chmod 700 ~/.ssh
             ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
             touch ~/.ssh/id #&& chmod 600 ~/.ssh/id
-            echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/id
+            echo "${{secrets.SSH_PUB_KEY}}" > ~/.ssh/id
             chmod 600 ~/.ssh/id
             ssh -tt -i  ~/.ssh/id root@${{ secrets.SSH_HOST }}
      #- run: touch ~/.ssh/id_rsa.pub && chmod 600 ~/.ssh/id_rsa.pub
