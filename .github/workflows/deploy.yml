@@ -13,7 +13,7 @@ jobs:
      - run: echo "${{secrets.SSH_PUB_KEY}}" >> ~/.ssh/id_rsa.pub
      - run: cat  ~/.ssh/id_rsa
      - run: eval `ssh-agent -s`
-     - run: sudo ssh-add
+     - run: sudo ssh-add ~/.ssh/id_rsa
      - run: sudo ssh-add -l
      - run: sudo echo $SSH_AGENT_SOCK
      - run: sudo ssh root@${{ secrets.SSH_HOST }}
