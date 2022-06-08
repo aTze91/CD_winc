@@ -4,7 +4,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-     - run: sudo apt-get install openssh-server
+     - run: sudo apt-get install openssh-server T ~/
      - run: sudo systemctl enable ssh
-     - run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> .ssh/known_hosts
+     - run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
       
