@@ -6,8 +6,8 @@ jobs:
     steps:
      - run: mkdir -p ~/.ssh && chmod 700 ~/.ssh
      - run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-     - run: touch ~/.ssh/id_rsa
+     - run: touch ~/.ssh/id_rsa && chmod 700 ~/.ssh
      - run: echo "${{secrets.SSH_PRIVATE_KEY}}" >> "~/.ssh/id_rsa"
-     - run: touch ~/.ssh/id_rsa.pub
+     - run: touch ~/.ssh/id_rsa.pub && chmod 700 ~/.ssh
      - run: echo "${{secrets.SSH_PUB_KEY}}" >> "~/.ssh/id_rsa.pub"
      - run: ssh root@${{ secrets.SSH_HOST }}
