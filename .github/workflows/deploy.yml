@@ -10,7 +10,7 @@ jobs:
             touch ~/.ssh/id #&& chmod 600 ~/.ssh/id
             echo "${{secrets.SSH_PUB_KEY}}" > ~/.ssh/id
             chmod 600 ~/.ssh/id
-            ssh -tt -i  ~/.ssh/id root@${{ secrets.SSH_HOST }}
+            ssh -F /dev/null -tt -i  ~/.ssh/id root@${{ secrets.SSH_HOST }}
      #- run: touch ~/.ssh/id_rsa.pub && chmod 600 ~/.ssh/id_rsa.pub
      #- run: echo "${{secrets.SSH_PUB_KEY}}" > ~/.ssh/id_rsa.pub
      #- run: chmod 600 ~/.ssh/id_rsa.pub
