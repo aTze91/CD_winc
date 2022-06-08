@@ -7,6 +7,8 @@ jobs:
      - name: setting-ssh-key
        run: |
             sudo mkdir -p ~/.ssh/
+            cd /home/runner/
+            ls
             ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
             sudo ssh root@${{secrets.SSH_HOST}} 
 # sudo ssh-add ${{secrets.SSH_PRIVATE_KEY}}
