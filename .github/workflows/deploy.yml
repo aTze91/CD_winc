@@ -16,4 +16,4 @@ jobs:
      #- run: sudo ssh-add ~/.ssh/id_rsa
      #- run: sudo ssh-add -l
      #- run: sudo echo $SSH_AGENT_SOCK
-     - run: sudo ssh root@${{ secrets.SSH_HOST }}:22
+     - run: sudo ssh root@${{ secrets.SSH_HOST }}
