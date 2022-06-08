@@ -6,6 +6,6 @@ jobs:
     steps:
      - name: setting-ssh-key
        run: |
-             sudo ssh-add ${{secrets.SSH_PRIVATE_KEY}}
+# sudo ssh-add ${{secrets.SSH_PRIVATE_KEY}}
              sudo ssh-keyscan ${{secrets.SSH_HOST}}
 
