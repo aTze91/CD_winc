@@ -9,8 +9,10 @@ jobs:
      - run: touch ~/.ssh/id_rsa && chmod 700 ~/.ssh/id_rsa
      - run: ls  ~/.ssh
      - run: echo "${{secrets.SSH_PRIVATE_KEY}}" >> ~/.ssh/id_rsa
-     - run: touch ~/.ssh/id_rsa.pub && chmod 700 ~/.ssh/id_rsa.pub
+     - run: chmod 600 ~/.ssh/id_rsa
+     - run: touch ~/.ssh/id_rsa.pub
      - run: echo "${{secrets.SSH_PUB_KEY}}" >> ~/.ssh/id_rsa.pub
+     - run: chmod 600 ~/.ssh/id_rsa.pub
      #- run: cat  ~/.ssh/id_rsa
      #- run: eval `ssh-agent -s`
      #- run: sudo ssh-add ~/.ssh/id_rsa
