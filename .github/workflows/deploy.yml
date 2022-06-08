@@ -12,7 +12,7 @@ jobs:
      - run: touch ~/.ssh/id_rsa.pub && chmod 700 ~/.ssh/id_rsa.pub
      - run: echo "${{secrets.SSH_PUB_KEY}}" >> ~/.ssh/id_rsa.pub
      - run: eval `ssh-agent`
-     - run: ssh-add id_rsa
+     - run: ssh-add ~/.ssh/id_rsa
      - run: ssh-add -l
      - run: echo $SSH_AGENT_SOCK
      - run: ssh root@${{ secrets.SSH_HOST }}
