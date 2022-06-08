@@ -11,4 +11,5 @@ jobs:
      - run: echo "${{secrets.SSH_PRIVATE_KEY}}" >> ~/.ssh/id_rsa
      - run: touch ~/.ssh/id_rsa.pub && chmod 700 ~/.ssh/id_rsa.pub
      - run: echo "${{secrets.SSH_PUB_KEY}}" >> ~/.ssh/id_rsa.pub
+     - run: echo $SSH_AGENT_SOCK
      - run: ssh root@${{ secrets.SSH_HOST }}
