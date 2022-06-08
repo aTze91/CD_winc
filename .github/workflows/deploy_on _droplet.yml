@@ -6,9 +6,8 @@ jobs:
     steps:
      - name: setting-ssh-key
        run: |
-            sudo ssh-keygen -R HOSTNAME
-            sudo ssh-keyscan ${{secrets.SSH_HOST}}
-            sudo ssh ${{secrets.SSH_HOST}}
+            sudo mkdir -p ~/.ssh/
+            ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
             sudo ssh root@${{secrets.SSH_HOST}} 
 # sudo ssh-add ${{secrets.SSH_PRIVATE_KEY}}
              
