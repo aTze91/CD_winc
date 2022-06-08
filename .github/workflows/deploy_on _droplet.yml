@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
      - name: setting-ssh-key
-       run: |
-# sudo ssh-add ${{secrets.SSH_PRIVATE_KEY}}
-             sudo ssh-keyscan ${{secrets.SSH_HOST}}
+       run: sudo ssh-keyscan ${{secrets.SSH_HOST}}
 
+# sudo ssh-add ${{secrets.SSH_PRIVATE_KEY}}
+             
