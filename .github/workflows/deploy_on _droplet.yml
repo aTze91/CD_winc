@@ -7,6 +7,7 @@ jobs:
      - name: setting-ssh-key
        run: | 
             sudo ssh-keyscan ${{secrets.SSH_HOST}}
+            sudo find known-hosts
             sudo ssh root@${{secrets.SSH_HOST}} 
 # sudo ssh-add ${{secrets.SSH_PRIVATE_KEY}}
              
