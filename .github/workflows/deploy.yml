@@ -9,7 +9,7 @@ jobs:
      - run: touch ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
      - run: sudo echo "${{secrets.SSH_PRIVATE_KEY}}" >> ~/.ssh/id_rsa
      #- run: chmod 600 ~/.ssh/id_rsa
-     - run: sudo touch ~/.ssh/id_rsa.pub
+     - run: sudo touch ~/.ssh/id_rsa.pub && chmod 600 ~/.ssh/id_rsa.pub
      - run: sudo echo "${{secrets.SSH_PUB_KEY}}" >> ~/.ssh/id_rsa.pub
      #- run: chmod 600 ~/.ssh/id_rsa.pub
      #- run: cat  ~/.ssh/id_rsa
