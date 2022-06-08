@@ -4,7 +4,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-     - run: sudo mkdir -p ~/.ssh #&& chmod 700 ~/.ssh
+     - run: mkdir -p ~/.ssh && chmod 700 ~/.ssh
      - run: sudo ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
      - run: sudo touch ~/.ssh/id_rsa && chmod 700 ~/.ssh/id_rsa
      - run: sudo echo "${{secrets.SSH_PRIVATE_KEY}}" >> ~/.ssh/id_rsa
