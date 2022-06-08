@@ -6,7 +6,6 @@ jobs:
     steps:
      - name: setting-ssh-key
        run: |
-            whoami
-            cd 
-            ssh-keyscan
+             ssh-add ${{secterts.SSH_PRIVATE_KEY}}
+             ssh-keyscan ${{secrets.SSH_HOST}}
 
