@@ -6,6 +6,6 @@ jobs:
     steps:
      - name: setting-ssh-key
        run: |
-             ssh-add ${{secterts.SSH_PRIVATE_KEY}}
+             ssh-add ${{secrets.SSH_PRIVATE_KEY}}
              ssh-keyscan ${{secrets.SSH_HOST}}
 
