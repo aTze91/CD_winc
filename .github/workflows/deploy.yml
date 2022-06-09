@@ -13,14 +13,17 @@ jobs:
             chmod 600 ~/.ssh/known_hosts
             chmod 600 ~/.ssh/id
             chmod 700 ~/.ssh
+            eval `ssh-agent -s`
+            ssh-add ~/.ssh/id
+            ssh-add -l
             ssh  -tt -i ~/.ssh/id root@${{ secrets.SSH_HOST }}
 
-     #-F /dev/null
+     #-F /dev/nullsudo 
      #- run: touch ~/.ssh/id_rsa.pub && chmod 600 ~/.ssh/id_rsa.pub
      #- run: echo "${{secrets.SSH_PUB_KEY}}" > ~/.ssh/id_rsa.pub
      #- run: chmod 600 ~/.ssh/id_rsa.pub
      #- run: cat  ~/.ssh/id_rsa
-     #- run: eval `ssh-agent -s`
-     #- run: sudo ssh-add ~/.ssh/id_rsa
-     #- run: sudo ssh-add -l
+     #- run: 
+     #- run: sudo _rsa
+     #- run: 
      #- run: sudo echo $SSH_AGENT_SOCK
