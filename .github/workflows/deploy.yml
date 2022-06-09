@@ -1,9 +1,10 @@
-name: ssh command
+name: deploy-on-droplet
 on: push
 jobs:
-  ssh-setup:
+  deploy-on-droplet:
     runs-on: ubuntu-latest
     steps:
+     - name: ssh-setup
      - run: |
             mkdir -p ~/.ssh
             touch ~/.ssh/known_hosts
@@ -14,13 +15,3 @@ jobs:
             chmod 600 ~/.ssh/id
             chmod 700 ~/.ssh 
             ssh  -tt -i ~/.ssh/id root@${{ secrets.SSH_HOST }}
-
-     #-F /dev/null sudo ssh-add -l
-     #- run: touch ~/.ssh/id_rsa.pub && chmod 600 ~/.ssh/id_rsa.pub
-     #- run: echo "${{secrets.SSH_PUB_KEY}}" > ~/.ssh/id_rsa.pub
-     #- run: chmod 600 ~/.ssh/id_rsa.pub
-     #- run: cat  ~/.ssh/id_rsa
-     #- run:  eval `ssh-agent -s`
-     #- run: sudo _rsa
-     #- run:  ssh-add ~/.ssh/id
-     #- run: sudo echo $SSH_AGENT_SOCK
