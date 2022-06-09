@@ -8,7 +8,10 @@ jobs:
             cd /home/.ssh
             ls
             mkdir -p ~/.ssh && chmod 700 ~/.ssh
+            cd /home/.ssh
+            ls
             ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+            ls
             touch ~/.ssh/id #&& chmod 600 ~/.ssh/id
             echo "${{secrets.SSH_PUB_KEY}}" > ~/.ssh/id
             chmod 600 ~/.ssh/id
