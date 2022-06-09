@@ -9,6 +9,7 @@ jobs:
             sudo mkdir -p .ssh # && chmod 700 .ssh
             cd /home/.ssh
             ls
+            touch .ssh/known_hosts #&& chmod 600 .ssh/known_hosts
             ssh-keyscan -H ${{ secrets.SSH_HOST }} >> .ssh/known_hosts
             ls
             touch .ssh/id #&& chmod 600 .ssh/id
