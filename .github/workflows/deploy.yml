@@ -15,5 +15,5 @@ jobs:
             chmod 600 ~/.ssh/id
             chmod 700 ~/.ssh 
             ssh -tt -i ~/.ssh/id root@${{ secrets.SSH_HOST }}
-            mkdir test
-            sudo reboot
+            mkdir -p ~/test
+            reboot
