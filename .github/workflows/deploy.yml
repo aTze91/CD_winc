@@ -5,17 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - run: |
-            mkdir -p /home/.ssh
-            touch /home/.ssh/known_hosts
-            ssh-keyscan -H ${{ secrets.SSH_HOST }} >> /home/.ssh/known_hosts
-            touch /home/.ssh/id
-            echo "${{secrets.SSH_PUB_KEY}}" > /home/.ssh/id
-            chmod 600 /home/.ssh/known_hosts
-            chmod 600 /home/.ssh/id
-            chmod 700 /home/.ssh
-            ssh -F /dev/null -tt -i /home/.ssh/id root@${{ secrets.SSH_HOST }}
+            mkdir -p ~/.ssh
+            touch ~/.ssh/known_hosts
+            ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+            touch ~/.ssh/id
+            echo "${{secrets.SSH_PUB_KEY}}" > ~/.ssh/id
+            chmod 600 ~/.ssh/known_hosts
+            chmod 600 ~/.ssh/id
+            chmod 700 ~/.ssh
+            ssh  -tt -i ~/.ssh/id root@${{ secrets.SSH_HOST }}
 
-
+     #-F /dev/null
      #- run: touch ~/.ssh/id_rsa.pub && chmod 600 ~/.ssh/id_rsa.pub
      #- run: echo "${{secrets.SSH_PUB_KEY}}" > ~/.ssh/id_rsa.pub
      #- run: chmod 600 ~/.ssh/id_rsa.pub
