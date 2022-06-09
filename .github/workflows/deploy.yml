@@ -6,7 +6,7 @@ jobs:
     steps:
      - run: |
             cd /home
-            sudo mkdir -p .ssh && chmod 700 .ssh
+            sudo mkdir -p .ssh # && chmod 700 .ssh
             cd /home/.ssh
             ls
             ssh-keyscan -H ${{ secrets.SSH_HOST }} >> .ssh/known_hosts
