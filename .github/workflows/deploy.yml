@@ -5,7 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - run: |
-            echo 	${{HOME}} | ls
+            echo $HOME | cd
+            ls
             mkdir -p ~/.ssh && chmod 700 ~/.ssh
             ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
             touch ~/.ssh/id #&& chmod 600 ~/.ssh/id
