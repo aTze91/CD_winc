@@ -1,0 +1,31 @@
+name: deploy-on-droplet
+on: push
+jobs:
+  run-tests:
+    runs-on: ubuntu latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8.6'
+      - name: Install Dependencies
+        run: pip install -r requirements.TXT
+      - name: Run tests
+        run: pytest
+  deploy-on-droplet:
+    needs: run-tests
+    runs-on: ubuntu-latest
+    steps:
+     - name: ssh-setup
+       run: |
+            mkdir -p ~/.ssh
+            touch ~/.ssh/known_hosts
+            ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+            touch ~/.ssh/id
+            echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/id
+            chmod 600 ~/.ssh/known_hosts
+            chmod 600 ~/.ssh/id
+            chmod 700 ~/.ssh 
+            ssh -tt -i ~/.ssh/id root@${{ secrets.SSH_HOST }} "mkdir -p ~/test2; exit"
