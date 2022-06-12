@@ -12,6 +12,7 @@ def client():
 def test_redirect(client):
     response = client.get("/home")
     assert response.status_code == 302
+    print(response.location)
     assert response.location == "http://localhost/"
 
 
