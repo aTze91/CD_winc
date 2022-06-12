@@ -33,4 +33,4 @@ jobs:
             chmod 700 ~/.ssh
       - run: ls
       - name: send commands
-        run : ssh -tt -i ~/.ssh/id root@${{ secrets.SSH_HOST }} 'bash -s' < commands.sh && exit
+        run : ssh -tt -i ~/.ssh/id root@${{ secrets.SSH_HOST }} 'bash -s' < commands.sh ; exit
