@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("base.html", title='Index')
+    return render_template("index.html", title='Index')
 
 @app.route("/about")
 def about():
@@ -19,6 +19,6 @@ def about():
 def home():
     return redirect(url_for('index'))
 
-@app.route('/unique/')
+@app.route('/report/')
 def unique():
-    return render_template('base.html', title='Unique')
+    return render_template('README.md', title='Report')
