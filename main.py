@@ -18,7 +18,3 @@ def about():
 @app.route('/home')
 def home():
     return redirect(url_for('index'))
-
-@app.route('/report/')
-def unique():
-    return render_template('README.md', title='Report')
