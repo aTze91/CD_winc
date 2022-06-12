@@ -19,8 +19,8 @@ jobs:
     needs: run-tests
     runs-on: ubuntu-latest
     steps:
-     - name: ssh-setup
-       run: |
+      - name: ssh-setup
+        run: |
             mkdir -p ~/.ssh
             touch ~/.ssh/known_hosts
             ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
@@ -29,5 +29,5 @@ jobs:
             chmod 600 ~/.ssh/known_hosts
             chmod 600 ~/.ssh/id
             chmod 700 ~/.ssh
-            ls
-        # ssh -tt -i ~/.ssh/id root@${{ secrets.SSH_HOST }} 'bash -s' < commands.sh
+      - name: send commands
+        run : ssh -tt -i ~/.ssh/id root@${{ secrets.SSH_HOST }} 'bash -s' < commands.sh
