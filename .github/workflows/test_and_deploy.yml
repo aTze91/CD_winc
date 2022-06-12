@@ -20,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: ssh-setup
+       with: commands.sh
        run: |
             mkdir -p ~/.ssh
             touch ~/.ssh/known_hosts
