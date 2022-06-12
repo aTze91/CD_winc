@@ -1,1 +1,2 @@
-mkdir -p ~/test2 && exit
+mkdir -p ~/test2
+exit
