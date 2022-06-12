@@ -1,5 +1,5 @@
-cd /var/www/CD_winc
+cd CD_winc
 git add .
-git commit -m 'pull from droplet'
+git commit -m 'droplet pull'
 git pull
 exit
