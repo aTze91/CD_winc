@@ -28,5 +28,6 @@ jobs:
             echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/id
             chmod 600 ~/.ssh/known_hosts
             chmod 600 ~/.ssh/id
-            chmod 700 ~/.ssh 
-            ssh -tt -i ~/.ssh/id root@${{ secrets.SSH_HOST }} 'bash -s' < commands.sh
+            chmod 700 ~/.ssh
+            ls
+        # ssh -tt -i ~/.ssh/id root@${{ secrets.SSH_HOST }} 'bash -s' < commands.sh
